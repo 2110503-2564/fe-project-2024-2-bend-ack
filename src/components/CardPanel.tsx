@@ -1,6 +1,7 @@
 'use client'
 import { useReducer } from "react";
-import Card from "./Card"
+// import Card from "./Card"
+import DentistCard from "./DentistCard";
 import Link from "next/link"
 
 export default function CardPanel(){
@@ -29,10 +30,14 @@ export default function CardPanel(){
             <div className="flex flex-row m-[20px] justify-evenly flex-wrap">
                 {
                     mockData.map((venue)=>(
-                        <Link href={`/venue/${venue.vid}`} className="w-1/6 h-[300px]  m-10 p-0"  >
-                            <Card venueName={venue.venueName} 
+                        <Link href={`/venue/${venue.vid}`} className="w-[400px] h-[300px] m-10 mt-"  >
+                            {/* <Card venueName={venue.venueName} 
                                 imgSrc={venue.imgSrc }
                                 onCompare={(venueName: string,newValue:number) => onCompare({ type: 'add', cardName: venueName ,rating:newValue })}
+                            /> */}
+                            <DentistCard dentName={venue.venueName} 
+                                imgSrc={venue.imgSrc }
+                                rating={4}
                             />
                         </Link>
                     ))

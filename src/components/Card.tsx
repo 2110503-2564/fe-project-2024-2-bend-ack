@@ -8,7 +8,7 @@ export default function Card({ venueName, imgSrc ,onCompare}: { venueName: strin
     const Ratingname=venueName+' Rating';
     const [rating, setRating] = useState<number | null>(0);
     return (
-        <InteractiveCard venueName={venueName}>
+        <InteractiveCard dentName={venueName}>
             <Image
                 src={imgSrc}
                 alt={venueName}

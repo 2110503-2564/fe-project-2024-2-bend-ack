@@ -18,26 +18,20 @@ export default function Banner(){
     return(
         <div className="relative flex justify-evenly pt-[50px] w-full h-[60vh] overflow-hidden"
         onClick={()=>{setIndex(index+1)}}>
-            {
-                session?.user?.name?
-                    <div className="absolute right-0 top-0 mt-20 mr-5 z-30 text-amber-800 text-2xl font-bold">
-                        Welcome {session.user.name}
-                    </div>
-                : null
-            }
+            
             <Image src={imgSrc[index%4]}
             alt='supreme world for parties'
             fill={true}
             priority
             objectFit='cover'
             />
-            <div className="text-white relative z-20 text-center mt-20 text-orange-200">
-                <h1 className='text-7xl m-10'>where every event finds its venue</h1>
-                <p className='text-3xl'>Absolute cinema. This website is so cool.</p>
+            <div className="text-white absolute inset-y-[40%] right-10 z-20 flex flex-col items-end">
+                <h1 className='text-7xl text-[#3a577b]'>DENT</h1>
+                <p className='text-3xl'>The best dentist booking app</p>
             </div>
-            <button className="z-20 bg-amber-800 p-2 rounded-xl absolute m-5 bottom-0 right-0 text-sm ring-1 ring-amber-900 text-amber-100
-            hover:bg-orange-300 hover:ring-amber-100" onClick={(e)=>{  e.stopPropagation(); router.push('/venue')}}>
-                Select Venue
+            <button className="z-20 bg-[#0e2f5f] p-2 rounded-xl absolute m-5 bottom-0 right-0 text-sm ring-2 ring-[#0e2f5f] text-white
+            hover:bg-[#5188cc] hover:ring-[#0e2f5f]" onClick={(e)=>{  e.stopPropagation(); router.push('/venue')}}>
+                Book an appointment
             </button>
         </div>
         

@@ -1,6 +1,6 @@
 'use client'
 
-export default function InteractiveCard({children,venueName}:{children:React.ReactNode,venueName:string}){
+export default function InteractiveCard({children,dentName}:{children:React.ReactNode,dentName:string}){
     function mouseHover(event:React.SyntheticEvent){
         if(event.type=='mouseover'){
             event.currentTarget.classList.remove("shadow-lg");
@@ -17,7 +17,7 @@ export default function InteractiveCard({children,venueName}:{children:React.Rea
         }
     }
     return(
-        <div className="w-full h-[300px] rounded-lg shadow-amber-600 shadow-lg bg-white" 
+        <div className="w-full h-auto flex flex-row align-items-center rounded-2xl shadow-amber-600 shadow-lg bg-white justify-items-center" 
         // onClick={(e)=>{
         //     e.stopPropagation(); 
         //     compareFunction(venueName);
