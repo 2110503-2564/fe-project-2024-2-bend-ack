@@ -25,7 +25,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         <ReduxProvider>
           <NextAuthProvider session={session}>
             <TopMenu/>
-            {children}
+                {children}
           </NextAuthProvider>
         </ReduxProvider>
       </body>

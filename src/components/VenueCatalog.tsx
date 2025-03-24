@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Card from './Card'
+// import Card from './Card'
 
 export default async function VenueCatalog({venuesJson}:{venuesJson: Promise<VenueJson>}){
     // interface VenueItem {
@@ -22,7 +22,7 @@ return(
     <div className="m-[20px] flex  flex-row content-around justify-around p-[10px] flex-wrap">
         {venues.data.map((venue:VenueItem)=>(
             <Link href={`/venue/${venue.id}`} className="w-1/6 h-[300px]  m-10 p-0" key={venue.id} >
-            <Card venueName={venue.name} imgSrc={venue.picture}></Card>
+            {/* <Card venueName={venue.name} imgSrc={venue.picture}></Card> */}
             </Link>
         ))}
     </div>

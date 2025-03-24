@@ -26,8 +26,8 @@ export default function Banner(){
             objectFit='cover'
             />
             <div className="text-white absolute inset-y-[40%] right-10 z-20 flex flex-col items-end">
-                <h1 className='text-7xl text-[#3a577b]'>DENT</h1>
-                <p className='text-3xl'>The best dentist booking app</p>
+                <h1 className='text-7xl text-[#3a577b] font-bold '>DENT</h1>
+                <p className='text-3xl font-light'>The best dentist booking app</p>
             </div>
             <button className="z-20 bg-[#0e2f5f] p-2 rounded-xl absolute m-5 bottom-0 right-0 text-sm ring-2 ring-[#0e2f5f] text-white
             hover:bg-[#5188cc] hover:ring-[#0e2f5f]" onClick={(e)=>{  e.stopPropagation(); router.push('/venue')}}>

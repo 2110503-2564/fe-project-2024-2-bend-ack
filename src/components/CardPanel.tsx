@@ -38,6 +38,8 @@ export default function CardPanel(){
                             <DentistCard dentName={venue.venueName} 
                                 imgSrc={venue.imgSrc }
                                 rating={4}
+                                areaofExpertise="ll"
+                                yearofExperience={4}
                             />
                         </Link>
                     ))
