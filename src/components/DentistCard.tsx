@@ -13,7 +13,7 @@ export default function DentistCard(
                     alt={dentName}
                     width={5000} 
                     height={3000}
-                    className="w-[96%] h-[60%] rounded-t-lg m-auto mt-2" 
+                    className="w-[96%] h-[60%] rounded-t-lg mx-auto mt-2" 
                 />
 
                 <div className="inline text-left ml-10 text-black">

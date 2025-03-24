@@ -1,8 +1,7 @@
-"use client";
 import BookingLayout from "@/components/BookingLayout";
 import DateReserve from "@/components/DateReserve";
 // import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+// import { useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { useDispatch} from "react-redux";
 import { Appdispatch } from "@/redux/store";
@@ -12,7 +11,7 @@ import { useAppSelector } from "@/redux/store";
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 
-export default  function Booking() {
+export default function Booking() {
     // const session =await getServerSession(authOptions);
     // if(!session||!session.user.token) return null;
     // const profile=await getUserProfile(session.user.token);
@@ -20,33 +19,27 @@ export default  function Booking() {
     // console.log(profile);
     const dispatch= useDispatch<Appdispatch>();
 
-    const [reserveDate,setReserveDate]=useState<Dayjs|null>(null);
-    const [reserveLocation,setReserveLocation]=useState<string>("Bloom");
-    const [reserveName,setReserveName] = useState<string|null>(null);
-    const [tel,setTel] = useState<string|null>(null);
-    const venueItems= useAppSelector((state)=>state.bookSlice.bookItems)
-    const makeBooking= (()=>{
-        if(reserveDate && reserveLocation && reserveName && tel){
-            //delete old one (if exist)
-            const existingBooking = venueItems.find(
-                (item: BookingItem) =>
-                    item.nameLastname === reserveName &&
-                    item.venue === reserveLocation &&
-                    item.bookDate === dayjs(reserveDate).format("MM/DD/YYYY")
-            );
-            if (existingBooking) {
-                dispatch(removeBooking(existingBooking));
-            }
-
-            const booking:BookingItem={
-                nameLastname: reserveName,
-                tel: tel,
-                venue: reserveLocation,
-                bookDate: dayjs(reserveDate).format("MM/DD/YYYY"),
-            };
-            dispatch(addBooking(booking));
-        }
-    });
+    const bookings=useAppSelector((state)=>state.bookSlice.bookItems);
+    // const reserveDate:Dayjs =bookings.apptdate? ;
+    // const reserveDentist:string =? ;
+    // const makeBooking= (()=>{
+    //     if(reserveDate && reserveDentist){
+            
+            // const existingBooking = bookings.length;
+            // if (existingBooking>0) {
+            //     alert("You have already made an appointment.");
+            //     return;
+            // }
+            //else
+            // const booking:BookingItem={
+            //     nameLastname: reserveName,
+            //     tel: tel,
+            //     venue: reserveLocation,
+            //     bookDate: dayjs(reserveDate).format("MM/DD/YYYY"),
+            // };
+            // dispatch(addBooking(booking));
+    //     }
+    // });
     return (
         <BookingLayout>
             <div>
@@ -57,23 +50,20 @@ export default  function Booking() {
                         <p>Tel. {profile.data.tel}</p>
                         <p>Member Since {createdAt.toString()}</p>
                     </div>
-                 :  null
+                 :  Please Log-in to make an appointment    
                 } */}
 
 
                 <h2 className="text-xl text-white mt-20 ml-20 mb-5">Venue Booking</h2>
                 <div className="flex flex-col ml-10 bg-white p-10 pt-[10px] pb-[20px] w-[600px] rounded-lg">
                     
-                        <DateReserve 
-                            onDateChange={(value:Dayjs)=>{setReserveDate(value)}}
-                            onLocationChange={(value:string)=>{setReserveLocation(value)}}
-                            onNameChange={(value:string)=>{setReserveName(value)}}
-                            onTelChange={(value:string)=>{setTel(value)}}
-                            />
+                        {/* <DateReserve 
+                            onDateChange={(value:Dayjs)=>{reserveDate=value}}
+                            /> */}
                         <button
                             name="Book Venue"
                             className="w-[100px] rounded-md h-[30px] text-xs mt-[20px] ml-0 bg-amber-600 hover:bg-amber-800"
-                            onClick={()=>{makeBooking()}}
+                            // onClick={()=>{makeBooking()}}
                         >
                             Book Venue
                         </button>
