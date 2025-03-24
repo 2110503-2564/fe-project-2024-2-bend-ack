@@ -30,7 +30,7 @@ export default function Banner(){
                 <p className='text-3xl font-light'>The best dentist booking app</p>
             </div>
             <button className="z-20 bg-[#0e2f5f] p-2 rounded-xl absolute m-5 bottom-0 right-0 text-sm ring-2 ring-[#0e2f5f] text-white
-            hover:bg-[#5188cc] hover:ring-[#0e2f5f]" onClick={(e)=>{  e.stopPropagation(); router.push('/venue')}}>
+            hover:bg-[#5188cc] hover:ring-[#0e2f5f]" onClick={(e)=>{  e.stopPropagation(); router.push('/dentist')}}>
                 Book an appointment
             </button>
         </div>

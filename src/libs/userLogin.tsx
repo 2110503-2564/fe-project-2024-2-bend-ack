@@ -1,6 +1,6 @@
 export default async function userLogin(userEmail:string, userPassword:string){
     await new Promise((resolve)=>setTimeout(resolve,300));
-    const response=await fetch("https://a08-venue-explorer-backend-3.vercel.app/api/v1/auth/login",
+    const response=await fetch("http://dentapp.us-east-1.elasticbeanstalk.com/api/v1/auth/login",
         {
             method:'POST',
             headers:{
@@ -13,7 +13,7 @@ export default async function userLogin(userEmail:string, userPassword:string){
         }
     )
     if(!response.ok){
-        throw new Error("failed to login");
+        return response.status;
     }
     return await response.json();
 }
