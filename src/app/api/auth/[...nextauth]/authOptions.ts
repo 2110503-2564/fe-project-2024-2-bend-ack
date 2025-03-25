@@ -21,6 +21,7 @@ export const authOptions:AuthOptions ={
             const userprof=await getUserProfile(token);
             if(userprof){
               const user=userprof.data;
+              user.token=token
               console.log("user ",user);
               return user
             }
@@ -33,17 +34,14 @@ export const authOptions:AuthOptions ={
         signIn: "/auth/login"
     },
     session:{strategy:'jwt'},
-    callbacks:{
-      async jwt({token,user}){
-        // console.log("jwt:",{...token},{...user});
-        if(user) return {...token, ...user}
-        return {...token}
+    callbacks: {
+      async jwt( {token,user}) {
+        return {...token, ...user}
       },
-      async session({ session, token ,user}) {
-          // console.log(session);
-          session.user.token=token as any
-          return session;
-        }
+      async session({ session, token, user }) {
+        session.user = token as any;
+        return session
+      }
     }
 
 }

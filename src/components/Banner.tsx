@@ -14,7 +14,7 @@ export default function Banner(){
         '/img/cover4.jpg'
     ];
     const {data:session} =useSession();
-    console.log(session);
+    console.log(session?.user.token);
     return(
         <div className="relative flex justify-evenly pt-[50px] w-full h-[60vh] overflow-hidden"
         onClick={()=>{setIndex(index+1)}}>

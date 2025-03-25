@@ -48,7 +48,7 @@ interface AppointmentItem {
   _id:string,
 apptDate:string,
 user:string,
-dentist:string,
+dentist:DentistItem,
 createdAt:string,
 __v:number
 }
