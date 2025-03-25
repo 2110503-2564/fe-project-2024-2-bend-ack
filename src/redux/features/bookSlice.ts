@@ -15,8 +15,10 @@ export const bookSlice = createSlice({
         },
         removeBooking: (state, action: PayloadAction<AppointmentItem>) => {
             const remainItems = state.bookItems.filter(obj => {
-                return ((obj._id!==action.payload._id));
-            });
+                return ((obj.apptDate!==action.payload.apptDate)||
+                (obj.apptDate!==action.payload.apptDate)||
+                (obj.apptDate!==action.payload.apptDate));
+            })
             state.bookItems = remainItems;
         },
     }

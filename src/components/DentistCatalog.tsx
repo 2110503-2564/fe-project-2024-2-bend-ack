@@ -9,7 +9,7 @@ return(
     <div className=" flex flex-row content-around justify-around p-[10px] flex-wrap">  
         {dentists.data.map((dentist:DentistItem)=>(
             <Link href={`/dentist/${dentist._id}`} 
-                className="w-1/4 h-auto m-5 p-0" 
+                className="w-1/4 h-1/3 m-5 p-0" 
                 key={dentist._id} >
                 <DentistCard 
                     dentName={dentist.name} 

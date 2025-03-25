@@ -8,7 +8,7 @@ export default function DentistCard(
         // const [rating, setRating] = useState<number | null>(0);
     return(
         <InteractiveCard dentName={dentName}>
-            <div className="flex-row space-around pb-5 w-full">
+            <div className="flex-row space-around pb-5 w-full h-full">
                 <Image
                     // src={imgSrc}
                     src='/img/cover.jpg'
@@ -46,6 +46,7 @@ export default function DentistCard(
                     
                     
                 </div>
+                {/* <button className="mx-10 my-5 bg-cyan-600 rounded-md hover:bg-cyan-100 p-2 ">Book Appointment</button> */}
             </div>
         </InteractiveCard>
     )

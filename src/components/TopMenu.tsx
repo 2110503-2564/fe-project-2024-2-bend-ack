@@ -11,7 +11,7 @@ export default async function TopMenu(){
             <Link href="/"><Image src='/img/logo.png' alt="logo" width={500} height={500} className="relative h-[100%] w-auto"/></Link>
             <div className="flex items-center justify-items-center text-center ml-[20px]"><TopMenuItem reference='/booking' text="Book"/></div>
             <div className="w-[70px] flex items-center justify-items-center -ml-[15px]">
-                <Link href='/appointment' className="text-center text-[#5188cc] text-sm">Appointment</Link>
+                <Link href='/appointment' className="text-center text-[#0e2f5f] text-sm">Appointment</Link>
             </div>  
             {
                 session? 

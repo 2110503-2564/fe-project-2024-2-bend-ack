@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default async function DentistDetailPage({params}: {params:{did:string}}){
     const dentistDetail = await getDentist(params.did);
-    console.log(dentistDetail);
+    //console.log(dentistDetail);
     const dentist:DentistItem=dentistDetail.data;
     return (
         <main>
@@ -35,7 +35,7 @@ export default async function DentistDetailPage({params}: {params:{did:string}})
                     
                         <div className="mt-5">Rating : <Rating name="read-only" value={dentist.ratings} readOnly /></div>
 
-                        <Link href={`/booking?id=${params.did}`}>
+                        <Link href={`/booking?id=${params.did}&name=${dentist.name}`}>
                         <button className="block rounded-md bg-[#0e2f5f] hover:bg-[#c5d9f3] px-3 py-1 text-white shadow-sm">
                             Make Appointment
                         </button>

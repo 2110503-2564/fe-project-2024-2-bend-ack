@@ -45,12 +45,9 @@ interface DentistJson{
 }
 
 interface AppointmentItem {
-  _id:string,
 apptDate:string,
 user:string,
 dentist:DentistItem,
-createdAt:string,
-__v:number
 }
 
 interface AppointmentJson {

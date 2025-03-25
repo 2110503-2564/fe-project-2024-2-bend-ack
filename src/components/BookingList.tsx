@@ -14,7 +14,7 @@ export default function BookingList(){
         <div className="mt-20 ml-10">
         {   appt.length>0 ?
                     appt.map((appmt:AppointmentItem)=>(
-                        <ApptBox appt={appmt} dent={appmt.dentist}/>
+                        <ApptBox appt={appmt}/>
                     ))
                 :
                     <div className="m-10">
