@@ -11,7 +11,7 @@ export default function DentistCard(
             <div className="flex-row space-around pb-5 w-full h-full">
                 <Image
                     // src={imgSrc}
-                    src='/img/cover.jpg'
+                    src='/img/dentist.png'
                     alt={dentName}
                     width={5000} 
                     height={3000}

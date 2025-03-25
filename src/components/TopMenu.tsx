@@ -9,7 +9,9 @@ export default async function TopMenu(){
     return(
         <div className="h-[50px] bg-[#a3bbd1] fixed m-0 border-indigo-300 flex flex-row z-30 w-full top-0 left-0">
             <Link href="/"><Image src='/img/logo.png' alt="logo" width={500} height={500} className="relative h-[100%] w-auto"/></Link>
-            <div className="flex items-center justify-items-center text-center ml-[20px]"><TopMenuItem reference='/booking' text="Book"/></div>
+            
+            <div className="flex items-center justify-items-center text-center ml-[10px]">
+                <TopMenuItem reference='/dentist' text="Dentist"/></div>
             <div className="w-[70px] flex items-center justify-items-center -ml-[15px]">
                 <Link href='/appointment' className="text-center text-[#0e2f5f] text-sm">Appointment</Link>
             </div>  

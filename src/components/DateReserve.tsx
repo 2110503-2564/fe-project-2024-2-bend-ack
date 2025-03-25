@@ -13,7 +13,7 @@ export default function DateReserve(
     const [bookDate,setBookDate] = useState<Dayjs|null>(null);
     // const [reserveDentist,setReserveDentist] = useState<string>("Dodge");
     return(
-        <div className="flex flex-col ml-[3px] my-5 p-0 pt-[10px] mt- pb-[10px] w-[600px] rounded-lg">
+        <div className="flex flex-col ml-[3px] mt-2 pb-[10px] w-[600px] rounded-lg">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker 
                     className="bg-white rounded-md w-[300px]"
