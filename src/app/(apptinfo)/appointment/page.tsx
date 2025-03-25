@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import getDentist from '@/libs/getDentist'
 import ApptBox from '@/components/ApptBox';
-import getUserProfile from '@/libs/getUserProfile';
+import Link from 'next/link';
 
 export default async function Appointment(){
     const session =await getServerSession(authOptions);
@@ -22,10 +22,16 @@ export default async function Appointment(){
     return(
         <main>
             <>
-            {
-                appointment.map((appt:AppointmentItem)=>(
-                    <ApptBox appt={appt} dent={appt.dentist}/>
-                ))
+            {   appt.count>0 ?
+                    appointment.map((appt:AppointmentItem)=>(
+                        <ApptBox appt={appt} dent={appt.dentist}/>
+                    ))
+                :
+                    <div className="m-10">
+                        <div className="text-4xl font-medium text-[#4678b6] mb-5">You have no appointment</div>
+                        <Link href='/dentist' className='p-2 underline text-2xl font-medium text-[#164485]'>make an appointment?</Link>   
+                    </div>
+                   
             }
             
             </>

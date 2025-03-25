@@ -16,7 +16,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    const user:UserItem=
+    const user=
         {
             name:name,
             tel:tel,
@@ -27,10 +27,10 @@ export default function SignUpPage() {
     try{
         await signUp(user);
         console.log("sign up successfully");
-        router.push("/api/auth/signIn");
+        router.push("/api/auth/signin");
     }     
     catch (err) {
-      setError(err.message);
+      console.log(err);
     }
   };
 
