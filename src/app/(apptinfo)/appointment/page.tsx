@@ -9,7 +9,7 @@ export default async function Appointment(){
     const session =await getServerSession(authOptions);
     if(!session) return <div className="mt-[70px] text-black">Please log in to access this page.</div>;
     const profile = await getUserProfile(session.user.token)
-    if(!profile) return <div className="mt-[70px] text-black">shit</div>;
+    if(!profile) return <div className="mt-[70px] text-black">shi te ru</div>;
     console.log(profile);
     const appt=await getAppointment(profile.data.token);
     if(!appt) return null;

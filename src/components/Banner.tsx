@@ -14,15 +14,15 @@ export default function Banner(){
         '/img/cover4.jpg'
     ];
     const {data:session} =useSession();
-    console.log(session?.user.token);
+    console.log(session);
     return(
         <div className="relative flex justify-evenly pt-[50px] w-full h-[60vh] overflow-hidden"
         onClick={()=>{setIndex(index+1)}}>
             {
                 session?
-                    <div className="text-cyan-900 font-bold absolute right-0 top-2  ">session.user.name</div>
+                    <div className="text-cyan-900 mt-[2px] mr-5 text-2xl font-md absolute right-0 top-2 z-20 ">Hello {session.user.name}</div>
                 :
-                <div>no session </div>
+                <div className="text-cyan-900 mt-[2px] mr-5 text-2xl font-md absolute right-0 top-2 z-20 ">no session </div>
             }
             <Image src={imgSrc[index%4]}
             alt='supreme world for parties'

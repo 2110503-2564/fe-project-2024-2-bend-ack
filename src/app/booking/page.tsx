@@ -8,6 +8,7 @@ import { useDispatch} from "react-redux";
 import { Appdispatch } from "@/redux/store";
 import { addBooking,removeBooking } from "@/redux/features/bookSlice";
 import { useAppSelector } from "@/redux/store";
+import TextField from '@mui/material/TextField';
 // import getUserProfile from "@/libs/getUserProfile";
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "../api/auth/[...nextauth]/authOptions";
@@ -23,15 +24,15 @@ export default  function Booking() {
     const dispatch= useDispatch<Appdispatch>();
 
     
-    const [reserveDate,setReserveDate]=useState<Dayjs|null>(null);
+    const [bookDate,setBookDate]=useState<Dayjs|null>(null);
     // const [reserveLocation,setReserveLocation]=useState<string>("Bloom");
-    const [reserveName,setReserveName] = useState<string|null>(null);
-    const [tel,setTel] = useState<string|null>(null);
-    // const venueItems= useAppSelector((state)=>state.bookSlice.bookItems)
+    const [bookName,setBookName] = useState<string|null>(null);
+    //const [tel,setTel] = useState<string|null>(null);
+    // const dentItems= useAppSelector((state)=>state.bookSlice.dentistItems)
     // const makeBooking= (()=>{
-    //     if(reserveDate && reserveLocation && reserveName && tel){
+    //     if(bookDate && bookName && did){
     //         //delete old one (if exist)
-    //         const existingBooking = venueItems.find(
+    //         const existingBooking = dentItems.find(
     //             (item: BookingItem) =>
     //                 item.nameLastname === reserveName &&
     //                 item.venue === reserveLocation &&
@@ -50,9 +51,13 @@ export default  function Booking() {
     //         dispatch(addBooking(booking));
     //     }
     // });
+
+    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setBookName(e.target.value);
+    }
     return (
         <BookingLayout>
-            <div>
+
                 {/* {profile ? 
                     <div className="absolute right-0 top-0 m-10 mt-[82px] text-sm">
                         <p>User {profile.data.name}</p>
@@ -64,24 +69,28 @@ export default  function Booking() {
                 } */}
 
 
-                <h2 className="text-xl text-white mt-20 ml-20 mb-5">Dentist Booking</h2>
-                <div className="flex flex-col ml-10 bg-[z00000] p-10 pt-[10px] pb-[20px] w-[600px] rounded-lg">
-                    
+                
+                <div className="flex flex-col ml-10 bg-[#5188cc] p-10 pt-[10px] pb-[20px] w-[600px] rounded-lg">
+                    <div className="ml-0 mt-5 text-xl text-white">Dentist Booking</div>
                         <DateReserve 
-                            onDateChange={(value:Dayjs)=>{setReserveDate(value)}}
+                            onDateChange={(value:Dayjs)=>{setBookDate(value)}}
                             // onLocationChange={(value:string)=>{setReserveLocation(value)}}
                             // onNameChange={(value:string)=>{setReserveName(value)}}
                             // onTelChange={(value:string)=>{setTel(value)}}
                             />
+                        <div className="w-[60%] bg-white rounded-full flex flex-row">
+                        <div className="mr-5"></div>
+                        <TextField name="Name-Lastname" id="standard-name" label="Name-Lastname" variant="standard" value={name}
+                        onChange={handleNameChange} /></div>
                         <button
                             name="Book"
-                            className="w-[100px] rounded-md h-[30px] text-xl mt-[100px]  ml-0 bg-cyan-600 hover:bg-amber-800"
+                            className="w-[100px] text-white rounded-md h-[30px] text-xl mt-[50px]  ml-0 bg-[#164485] hover:bg-white hover:text-[#164485]"
                             // onClick={()=>{makeBooking()}}
                         >
                             Book
                         </button>
                 </div>
-            </div>
+
         </BookingLayout>
     );
 }

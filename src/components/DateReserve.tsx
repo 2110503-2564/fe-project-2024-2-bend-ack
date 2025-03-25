@@ -10,7 +10,7 @@ export default function DateReserve(
     {onDateChange}:{onDateChange:Function}
     ){
 
-    const [reserveDate,setReserveDate] = useState<Dayjs|null>(null);
+    const [bookDate,setBookDate] = useState<Dayjs|null>(null);
     // const [reserveDentist,setReserveDentist] = useState<string>("Dodge");
     return(
         // <div  className="flex flex-col w-[300px] h-[70px] bg-white-100">
@@ -45,8 +45,8 @@ export default function DateReserve(
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker 
                         className="bg-white rounded-md w-[300px]"
-                        value={reserveDate}
-                        onChange={(value)=>{setReserveDate(value);onDateChange(value)}}
+                        value={bookDate}
+                        onChange={(value)=>{setBookDate(value);onDateChange(value)}}
                         />
                 </LocalizationProvider>
             </div>
