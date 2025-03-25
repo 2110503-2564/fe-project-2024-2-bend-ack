@@ -60,4 +60,10 @@ interface AppointmentJson {
   data: AppointmentItem[]
 }
 
-
+interface UserItem {
+  name:string,
+  tel:string,
+  email:string,
+  password:string,
+  role:string
+}

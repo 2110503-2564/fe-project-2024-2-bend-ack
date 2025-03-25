@@ -14,6 +14,7 @@ export default function Banner(){
         '/img/cover4.jpg'
     ];
     const {data:session} =useSession();
+    console.log(session?.user);
     console.log(session?.user.token);
     return(
         <div className="relative flex justify-evenly pt-[50px] w-full h-[60vh] overflow-hidden"
@@ -38,7 +39,6 @@ export default function Banner(){
             hover:bg-[#5188cc] hover:ring-[#0e2f5f]" onClick={(e)=>{  e.stopPropagation(); router.push('/dentist')}}>
                 Book an appointment
             </button>
-        </div>
-        
+    )</div>
     )
 }

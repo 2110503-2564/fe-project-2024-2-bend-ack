@@ -12,7 +12,6 @@ export default async function Home() {
     <main className="bg-[#c5d9f3]" >
       <Banner/>
       <div className="flex justify-evenly w-full" style={{ marginTop: "30px" }}>
-        {/* <CardPanel/> */}
         <DentistCatalog dentistJson={dentists}/>
       </div>
     </main>
