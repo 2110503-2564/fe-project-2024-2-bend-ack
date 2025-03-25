@@ -17,7 +17,7 @@ export default function InteractiveCard({children,dentName}:{children:React.Reac
         }
     }
     return(
-        <div className="w-full h-auto flex flex-row align-items-center rounded-2xl shadow-grey-400 shadow-sm bg-white justify-items-center" 
+        <div className="w-full h-[300px] flex flex-row align-items-center rounded-2xl shadow-grey-400 shadow-sm bg-white justify-items-center" 
         // onClick={(e)=>{
         //     e.stopPropagation(); 
         //     compareFunction(venueName);

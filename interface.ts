@@ -12,6 +12,7 @@ interface VenueItem {
   id: string
 }
 
+
 interface VenueJson {
   success: boolean,
   count: number,
@@ -25,9 +26,8 @@ interface BookingItem {
   venue: string;
   bookDate: string;
 }
-//-------------------------------
-
-interface DentistItem {
+//---------------------
+interface DentistItem{
   _id:string,
   name:string,
   yearsofexperience:number,
@@ -37,9 +37,27 @@ interface DentistItem {
   reviewcounts:number
 }
 
-interface DentistJson {
+interface DentistJson{
   success: boolean,
   count: number,
   pagination: Object,
   data: DentistItem[]
 }
+
+interface AppointmentItem {
+  _id:string,
+apptDate:string,
+user:string,
+dentist:string,
+createdAt:string,
+__v:number
+}
+
+interface AppointmentJson {
+  success: boolean,
+  count: number,
+  pagination: Object,
+  data: AppointmentItem[]
+}
+
+

@@ -7,32 +7,30 @@ import { TextField,Select,MenuItem } from "@mui/material"
 import { Dayjs } from "dayjs"
 
 export default function DateReserve(
-    {onDateChange,onLocationChange,onNameChange,onTelChange}:
-    {onDateChange:Function,onLocationChange:Function,onNameChange:Function,onTelChange:Function}){
+    {onDateChange}:{onDateChange:Function}
+    ){
 
     const [reserveDate,setReserveDate] = useState<Dayjs|null>(null);
-    const [reserveLocation,setReserveLocation] = useState<string>("Bloom");
-    const [reserveName,setReserveName] = useState<string|null>(null);
-    const [tel,setTel] = useState<string|null>(null);
+    // const [reserveDentist,setReserveDentist] = useState<string>("Dodge");
     return(
-        <div  className="flex flex-col w-[600px] ">
-            <TextField
-                variant="standard"
-                name="Name-Lastname"
-                label="Name-Lastname"
-                value={reserveName}
-                onChange={(e)=>{setReserveName(e.target.value);onNameChange(e.target.value)}}
-                className="w-[200px] h-[60px] mt-0 ml-[10px]"
-            />
-            <TextField
+        // <div  className="flex flex-col w-[300px] h-[70px] bg-white-100">
+        //     <TextField
+        //         variant="standard"
+        //         name="Dentist Name"
+        //         label="Dentist Name"
+        //         value={reserveName}
+        //         // onChange={(e)=>{setReserveName(e.target.value);onNameChange(e.target.value)}}
+        //         className="w-[200px] h-[60px] mt-0 ml-[10px]"
+        //     />
+            /* <TextField
                 variant="standard"
                 name="Contact-Number"
                 label="Contact-Number"
                 value={tel}
-                onChange={(e)=>{setTel(e.target.value);onTelChange(e.target.value)}}
+                // onChange={(e)=>{setTel(e.target.value);onTelChange(e.target.value)}}
                 className="w-[200px] h-[60px] ml-[10px]"
-            />
-            <Select
+            /> */
+            /* <Select
                 variant="standard"
                 id="venue"
                 value={reserveLocation}
@@ -42,8 +40,8 @@ export default function DateReserve(
                 <MenuItem value="Bloom">The Bloom Pavilion</MenuItem>
                 <MenuItem value="Spark">Spark Space</MenuItem>
                 <MenuItem value="GrandTable">The Grand Table</MenuItem>
-            </Select>
-            <div className="flex flex-col ml-[3px] p-0 pt-[10px]  pb-[10px] w-[600px] rounded-lg">
+            </Select> */
+            <div className="flex flex-col ml-[3px] my-5 p-0 pt-[10px] mt- pb-[10px] w-[600px] rounded-lg">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker 
                         className="bg-white rounded-md w-[300px]"
@@ -52,6 +50,6 @@ export default function DateReserve(
                         />
                 </LocalizationProvider>
             </div>
-        </div>
+        // </div>
     )
 }

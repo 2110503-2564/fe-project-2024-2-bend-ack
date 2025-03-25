@@ -20,7 +20,8 @@ export default function CardPanel(){
         }
     }
     const [compareList,onCompare]=useReducer(compareReducer,new Map<string,number>());
-    const mockData=[{vid:'001', venueName:'The Bloom Pavilion', imgSrc:"/img/bloom.jpg"},
+    const mockData=[
+        {vid:'001', venueName:'The Bloom Pavilion', imgSrc:"/img/bloom.jpg"},
         {vid:'002', venueName:'Spark Space', imgSrc:"/img/sparkspace.jpg"},
         {vid:'003', venueName:'The Grand Table', imgSrc:"/img/grandtable.jpg"}
     ]

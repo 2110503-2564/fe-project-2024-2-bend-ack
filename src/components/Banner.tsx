@@ -18,7 +18,12 @@ export default function Banner(){
     return(
         <div className="relative flex justify-evenly pt-[50px] w-full h-[60vh] overflow-hidden"
         onClick={()=>{setIndex(index+1)}}>
-            
+            {
+                session?
+                    <div className="text-cyan-900 font-bold absolute right-0 top-2  ">session.user.name</div>
+                :
+                <div>no session </div>
+            }
             <Image src={imgSrc[index%4]}
             alt='supreme world for parties'
             fill={true}

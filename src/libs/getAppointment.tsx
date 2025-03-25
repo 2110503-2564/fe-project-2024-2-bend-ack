@@ -1,6 +1,6 @@
-export default async function getUserProfile(token:string){
+export default async function getAppointment(token:string){
     await new Promise((resolve)=>setTimeout(resolve,300));
-    const response=await fetch("http://dentapp.us-east-1.elasticbeanstalk.com/api/v1/auth/me",
+    const response=await fetch("http://dentapp.us-east-1.elasticbeanstalk.com/api/v1/appointments",
         {
             method:'GET',
             headers:{   
@@ -9,7 +9,7 @@ export default async function getUserProfile(token:string){
         }
     )
     if(!response.ok){
-        throw new Error("failed to login");
+        throw new Error("failed to fetch appointment");
     }
     return await response.json();
 }

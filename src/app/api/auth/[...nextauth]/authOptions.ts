@@ -22,6 +22,9 @@ export const authOptions:AuthOptions ={
             return null}
         }
       })],
+      pages: {
+        signIn: "/auth/login",  
+    },
     session:{strategy:'jwt'},
     callbacks:{
         async jwt({token,user}){

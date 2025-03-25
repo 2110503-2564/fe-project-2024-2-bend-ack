@@ -11,8 +11,8 @@ import ReduxProvider from "@/redux/ReduxProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Venue Booking App",
-  description: "venue Booking App",
+  title: "Dentist Booking App",
+  description: "Dentist Booking App",
 };
 
 export default async function RootLayout({children}: {children: React.ReactNode}) 
