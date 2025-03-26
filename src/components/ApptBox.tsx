@@ -35,6 +35,7 @@ export default function ApptBox(
         const success = await deleteAppointment(appt._id, token); 
         
         if (success) {
+            router.refresh();
             alert("Appointment Deleted");
         } else {
             alert("Failed to delete appointment");
@@ -49,6 +50,7 @@ export default function ApptBox(
         const success = await updateAppointment(appt._id, dayjs(selectedDate).format("YYYY-MM-DD"), token);
         
         if (success) {
+            router.refresh();
             alert("Appointment updated successfully!");
             setIsEditing(false);
         } else {
