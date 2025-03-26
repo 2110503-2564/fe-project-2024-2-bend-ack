@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Rating from "@mui/material/Rating";
-import { useEffect } from "react";
 import createRating from "@/libs/createRating";
 
 export default function RatingBar({ did, token, uid }: { did: string; token: string; uid: string }) {
@@ -19,9 +18,9 @@ export default function RatingBar({ did, token, uid }: { did: string; token: str
         rating: rate,
       });
       router.refresh();
-      alert("Rated successfully")
+      alert("Rated successfully");
     } catch (error) {
-      alert("Failed to rate")
+      alert("Failed to rate");
     }
   };
 
@@ -33,12 +32,6 @@ export default function RatingBar({ did, token, uid }: { did: string; token: str
     }
   };
 
-  useEffect(() => {
-    if (did && rate !== null) {
-      makeRating();
-    }
-  }, []);
-
   return (
     <div className="mt-10">
       <Rating
@@ -46,9 +39,11 @@ export default function RatingBar({ did, token, uid }: { did: string; token: str
         value={rate}
         precision={0.5}
         size="large"
-        onChange={(e, newValue) => {if (newValue !== null) {
+        onChange={(e, newValue) => {
+          if (newValue !== null) {
             setRate(newValue);
-          }}}
+          }
+        }}
       />
       <button
         className="w-full w-[70%] block my-10 rounded-xl bg-[#0e2f5f] font-bold text-white hover:bg-[#c5d9f3] px-3 py-1 hover:text-[#0e2f5f] shadow-sm"
