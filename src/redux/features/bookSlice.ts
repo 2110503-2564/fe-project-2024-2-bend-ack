@@ -2,24 +2,22 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type BookState = {
     bookItems: AppointmentItem[];
-}
+};
 
-const initialState: BookState = { bookItems: [] }
+const initialState: BookState = { bookItems: [] };
 
 export const bookSlice = createSlice({
     name: "appointment",
     initialState,
     reducers: {
         addBooking: (state, action: PayloadAction<AppointmentItem>) => {
-            state.bookItems.push(action.payload); 
+            state.bookItems.push(action.payload);
         },
         removeBooking: (state, action: PayloadAction<AppointmentItem>) => {
-            const remainItems = state.bookItems.filter(obj => {
-                return ((obj.apptDate!==action.payload.apptDate)||
-                (obj.apptDate!==action.payload.apptDate)||
-                (obj.apptDate!==action.payload.apptDate));
-            })
-            state.bookItems = remainItems;
+            // Correcting the filtering logic
+            state.bookItems = state.bookItems.filter(obj => 
+                obj.apptDate !== action.payload.apptDate || obj.dentist._id !== action.payload.dentist._id
+            );
         },
     }
 });

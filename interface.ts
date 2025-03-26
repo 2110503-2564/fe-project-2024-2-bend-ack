@@ -32,7 +32,7 @@ interface DentistItem{
   name:string,
   yearsofexperience:number,
   areaofexpertise:string,
-  __v:number,
+  id:string
   ratings:number,
   reviewcounts:number
 }
@@ -44,16 +44,23 @@ interface DentistJson{
   data: DentistItem[]
 }
 
+interface oneDentistJson{
+  success: boolean,
+  data: DentistItem
+}
+
 interface AppointmentItem {
-apptDate:string,
-user:string,
-dentist:DentistItem,
+  _id: string;          
+  apptDate: string;
+  user: string;
+  dentist: DentistItem;
+  createdAt?: string;    
+  __v: number;          
 }
 
 interface AppointmentJson {
   success: boolean,
   count: number,
-  pagination: Object,
   data: AppointmentItem[]
 }
 

@@ -1,11 +1,10 @@
-import {Dayjs} from "dayjs";
 
-export default async function createAppointment(
-    {did,user,apptDate,token}:
-    {did:string, user:string,apptDate:Dayjs,token:string}){
+export default async function createRating(
+    {did,uid,rating,token}:
+    {did:string, uid:string,rating:number,token:string}){
 
     await new Promise((resolve)=>setTimeout(resolve,300));
-    const response=await fetch(`http://dentapp.us-east-1.elasticbeanstalk.com/api/v1/dentists/${did}/appointments`,
+    const response=await fetch(`http://dentapp.us-east-1.elasticbeanstalk.com/api/v1/dentists/${did}/ratings`,
         {
             method:'POST',
             headers:{
@@ -13,8 +12,8 @@ export default async function createAppointment(
                 "Authorization": `Bearer ${token}`
             },
             body:JSON.stringify({
-                apptDate:apptDate.toString(),
-                user:user
+                user:uid,
+                rating:rating
             }),
         }
     )

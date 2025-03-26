@@ -6,5 +6,5 @@ export default async function getDentist(id:string) {
         throw new Error("Failed to fetch dentists")
     }
     
-    return await response.json();
+    return response.json();
 }

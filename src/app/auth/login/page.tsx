@@ -23,7 +23,8 @@ export default function LoginPage() {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen">
-            <h2 className="text-xl font-bold">Sign In</h2>
+            <div className="bg-white py-5 px-10 rounded-2xl">
+            <h2 className="text-xl text-[#4678b6] font-semibold mb-5">Sign In</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <input
                     type="email"
@@ -39,11 +40,12 @@ export default function LoginPage() {
                     placeholder="Password"
                     className="border p-2"
                 />
-                <button type="submit" className="bg-blue-500 text-white p-2">
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded-3xl mt-3">
                     Login
                 </button>
             </form>
             {error && <p className="text-red-500 mt-2">{error}</p>}
+            </div>
         </div>
     );
 }

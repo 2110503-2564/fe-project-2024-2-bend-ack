@@ -36,7 +36,7 @@ export default async function DentistDetailPage({params}: {params:{did:string}})
                         <div className="mt-5">Rating : <Rating name="read-only" value={dentist.ratings} readOnly /></div>
 
                         <Link href={`/booking?id=${params.did}&name=${dentist.name}`}>
-                        <button className="w-full w-[70%] block my-10 rounded-xl bg-[#0e2f5f] font-bold text-white hover:bg-[#c5d9f3] px-3 py-1 hover:text-[#0e2f5f] shadow-sm">
+                        <button className=" w-[80%] block my-10 rounded-xl bg-[#0e2f5f] font-bold text-white hover:bg-[#c5d9f3] px-3 py-1 hover:text-[#0e2f5f] shadow-sm">
                             Make an Appointment
                         </button>
                         </Link>

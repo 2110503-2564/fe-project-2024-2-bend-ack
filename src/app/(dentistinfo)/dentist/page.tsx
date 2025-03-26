@@ -9,8 +9,8 @@ export default async function Dentist(){
     // const dentAmount=1;
     return(
         <main>
-            <div className="mt-[60px] w-full h-20 bg-[#8eb4e3] text-center px-10 py-5">
-                <h1 className="text-4xl font-medium text-[#3a577b] ">Meet {dentAmount} dentists available</h1>
+            <div className="mt-[60px] w-full h-[170px] bg-[#8eb4e3] text-center px-10 pt-5">
+                <h1 className="text-6xl font-medium text-[#3a577b] pt-7 pl-5">Meet {dentAmount} dentists available</h1>
             </div>
             <div className="mt-20 my-10">
             <Suspense fallback={

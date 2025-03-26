@@ -36,7 +36,8 @@ export default function SignUpPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-2xl text-cyan  mb-4">Sign Up</h1>
+      <div className="bg-white px-10 py-10 rounded-2xl">
+      <h1 className="text-2xl text-[#4678b6]  mb-5">Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
           type="name"
@@ -84,6 +85,7 @@ export default function SignUpPage() {
           Sign Up
         </button>
       </form>
+      </div>
     </div>
   );
 }
