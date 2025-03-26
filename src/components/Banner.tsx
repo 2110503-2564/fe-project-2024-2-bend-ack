@@ -23,7 +23,7 @@ export default function Banner(){
                 session?
                     <div className="text-cyan-900 mt-[2px] mr-5 text-2xl font-md absolute right-0 top-2 z-20 ">Hello {session.user.name}</div>
                 :
-                <div className="text-cyan-900 mt-[2px] mr-5 text-2xl font-md absolute right-0 top-2 z-20 ">no session </div>
+                null
             }
             <Image src={imgSrc[index%4]}
             alt='supreme world for parties'

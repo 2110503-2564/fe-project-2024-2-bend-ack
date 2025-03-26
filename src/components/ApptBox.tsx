@@ -62,7 +62,7 @@ export default function ApptBox(
             <h1 className="font-semibold text-xl text-[#e1edfc] ml-10">
                 Dentist: {appt.dentist?.name || "Unknown"}
             </h1>
-
+            <div className="flex flex-row">
             <div className="relative flex flex-row justify-between items-center bg-white rounded-full h-[20%] p-2 px-10 w-[90%]">
                 {isEditing ? (
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -106,7 +106,7 @@ export default function ApptBox(
                 </Link>
                 :null
             }
-            
+            </div>
         </div>
     );
 }
